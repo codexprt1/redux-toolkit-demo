@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment } from "./redux/counter";
+import { decrement, increment, incrementByAmount } from "./redux/counter";
 
 const App = () => {
 	const { value } = useSelector((state) => state.counter);
@@ -13,6 +13,11 @@ const App = () => {
 			<br />
 			<br />
 			<button onClick={() => dispatch(decrement())}>Decrement</button>
+			<br />
+			<br />
+			<button onClick={() => dispatch(incrementByAmount(5))}>
+				Increment By 5
+			</button>
 		</div>
 	);
 };
